@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 300px 1fr;
+            height: 100vh;
+        }
+        .header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .action-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .sidebar {
+            background-color: #f0f0f0;
+            padding: 20px;
+            overflow-y: auto;
+            grid-row: 2;
+        }
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .name-field {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .search-bar {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .category {
+            margin-bottom: 20px;
+        }
+        .add-element {
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .draggable-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 5px;
+            cursor: move;
+        }
+        .canvas-area {
+            padding: 20px;
+            position: relative;
+            grid-row: 2;
+            overflow-y: auto;
+        }
+        .canvas {
+            border: 2px dashed #ccc;
+            height: 300px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .canvas-instructions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #999;
+            text-align: center;
+            width: 80%;
+        }
+        .canvas-name {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #999;
+            font-size: 14px;
+        }
+        .add-canvas {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Prompt Builder</h1>
+        <div class="action-buttons">
+            <button class="action-button">Save</button>
+            <button class="action-button">Save As</button>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="category">
+            <div class="category-header">
+                <h3>Prompt Name</h3>
+            </div>
+            <input type="text" class="name-field" value="Sales Dashboard" placeholder="Enter dashboard name">
+        </div>
+        <input type="text" class="search-bar" placeholder="Search elements...">
+        <div class="category">
+            <div class="category-header">
+                <h3>Wrapper Elements</h3>
+                <span class="add-element">+</span>
+            </div>
+            <div class="draggable-item" draggable="true">Instructions</div>
+            <div class="draggable-item" draggable="true">Context</div>
+            <div class="draggable-item" draggable="true">Prompt Header</div>
+            <div class="draggable-item" draggable="true">QA Prompt 1</div>
+            <div class="draggable-item" draggable="true">QA Prompt 2</div>
+        </div>
+        <div class="category">
+            <div class="category-header">
+                <h3>Data Elements</h3>
+                <span class="add-element">+</span>
+            </div>
+            <div class="draggable-item" draggable="true">Visits</div>
+            <div class="draggable-item" draggable="true">Revenue</div>
+            <div class="draggable-item" draggable="true">Registrations</div>
+            <div class="draggable-item" draggable="true">Logins</div>
+        </div>
+    </div>
+    <div class="canvas-area">
+        <div class="canvas">
+            <div class="canvas-name">Prompt 1</div>
+            <div class="canvas-instructions">
+                Arrange elements here to construct your custom prompt. The order matters!
+            </div>
+        </div>
+        <div class="canvas">
+            <div class="canvas-name">Prompt 2</div>
+            <div class="canvas-instructions">
+                Arrange elements here to construct your custom prompt. The order matters!
+            </div>
+        </div>
+        <span class="add-canvas">+</span>
+    </div>
+
+    <script>
+        // (Previous JavaScript code remains unchanged)
+    </script>
+</body>
+</html>
